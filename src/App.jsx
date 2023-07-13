@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 // Step 2 create a component
@@ -35,7 +36,6 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <HornedBeastDisplayModal />
         <Button variant="primary" onClick={this.handleShow}>
           Launch
         </Button>
