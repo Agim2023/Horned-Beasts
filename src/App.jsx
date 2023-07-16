@@ -34,6 +34,7 @@ class App extends React.Component {
   };
 
   handleOpenAminal = (aminalName, aminalImgUrl) => {
+    console.log("open beast" + aminalName, aminalImgUrl);
     this.setState({
       modalIsShowing: true,
       modalHornedBeastName: aminalName,
