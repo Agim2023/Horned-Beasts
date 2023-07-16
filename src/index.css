@@ -72,3 +72,7 @@ img {
   width: 400px;
   border-radius: 30%;
 }
+
+body {
+  background-color: lightslategray;
+}

@@ -6,6 +6,7 @@ import Main from "./components/Main";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Container } from "react-bootstrap";
 
 // Step 2 create a component
 class App extends React.Component {
@@ -32,13 +33,18 @@ class App extends React.Component {
     });
   };
 
+  handleOpenAminal = (aminalName, aminalImgUrl) => {
+    this.setState({
+      modalIsShowing: true,
+      modalHornedBeastName: aminalName,
+      modalImgUrl: aminalImgUrl,
+    });
+  };
+
   render() {
     return (
-      <div>
+      <Container>
         <Header />
-        <Button variant="primary" onClick={this.handleShow}>
-          Launch
-        </Button>
         <Modal show={this.state.modalIsShowing} onHide={this.handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Aminal</Modal.Title>
@@ -48,9 +54,9 @@ class App extends React.Component {
             <img src={this.state.modalImgUrl} />
           </Modal.Body>
         </Modal>
-        <Main />
+        <Main handleOpenAminal={this.handleOpenAminal} />
         <Footer />
-      </div>
+      </Container>
     );
   }
 }

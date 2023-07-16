@@ -15,12 +15,17 @@ class HornedBeast extends React.Component {
       favoritedCount: this.state.favoritedCount + 1,
     });
   };
+
+  handleClickImage = (event) => {
+    this.props.handleOpenAminal(this.props.title, this.props.imgSRC);
+  };
+
   render() {
     return (
       <div>
         <h2>{this.props.title}</h2>
         <p>favorite count: {this.state.favoritedCount}</p>
-        <img src={this.props.imgSRC} onClick={this.handlefavorited} />
+        <img src={this.props.imgSRC} onClick={this.handleClickImage} />
         <p>{this.props.description}</p>
       </div>
     );
